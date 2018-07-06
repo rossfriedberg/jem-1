@@ -1,0 +1,12 @@
+{
+        "Patch/Cell Unstable":"Patch/Cell Unstable", 
+        "Patch Became Leaky":"Patch Became Leaky", 
+        "Access Resistance Increased":"Access Resistance Increased", 
+        "Cell Depolarized":"Cell Depolarized",
+        "Cell Hyperpolarized":"Cell Hyperpolarized", 
+        "Blowout Voltage Out of Range":"Blowout Voltage Out of Range", 
+        "Rheobase Changed":"Rheobase Changed", 
+        "Ended After C1":"Ended After C1", 
+        "Training/Practice":"Training/Practice", 
+        "Rig/Software Problems":"Rig/Software Problems"
+}

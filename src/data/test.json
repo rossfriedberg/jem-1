@@ -1,0 +1,11 @@
+
+"roiMajor":{
+    "schema":{
+        "type":"string"
+    },
+    "options":{
+        "type":"select",
+        "noneLabel": "Pick an ROI major...",
+        "sort":false
+    }
+}
