@@ -1,11 +1,206 @@
-
-"roiMajor":{
-    "schema":{
-        "type":"string"
-    },
-    "options":{
-        "type":"select",
-        "noneLabel": "Pick an ROI major...",
-        "sort":false
+"data":[
+    {"value": "VISp1",
+    "attributes": {
+        "roiMajor": "VISp",
+        "roiMinor": "layer 1"
+        }
+    }, {
+    "value": "VISp2/3",
+    "attributes": {
+        "roiMajor": "VISp",
+        "roiMinor": "layer 2/3"
+        }
+    }, {
+    "value": "VISp4",
+    "attributes": {
+        "roiMajor": "VISp",
+        "roiMinor": "layer 4"
+        }
+    }, {
+    "value": "VISp5",
+    "attributes": {
+        "roiMajor": "VISp",
+        "roiMinor": "layer 5"
+        }
+    }, {
+    "value": "VISp6a",
+    "attributes": {
+        "roiMajor": "VISp",
+        "roiMinor": "layer 6a"
+        }
+    }, {
+    "value": "VISp6b",
+    "attributes": {
+        "roiMajor": "VISp",
+        "roiMinor": "layer 6b"
+        }
+    }, {
+    "value": "FCx1",
+    "attributes": {
+        "roiMajor": "FCx",
+        "roiMinor": "layer 1"
+        }
+    }, {
+    "value": "FCx2",
+    "attributes": {
+        "roiMajor": "FCx",
+        "roiMinor": "layer 2"
+        }
+    }, {
+    "value": "FCx3",
+    "attributes": {
+        "roiMajor": "FCx",
+        "roiMinor": "layer 3"
+        }
+    }, {
+    "value": "FCx3a",
+    "attributes": {
+        "roiMajor": "FCx",
+        "roiMinor": "layer 3a"
+        }
+    }, {
+    "value": "FCx3b",
+    "attributes": {
+        "roiMajor": "FCx",
+        "roiMinor": "layer 3b"
+        }
+    }, {
+    "value": "FCx3c",
+    "attributes": {
+        "roiMajor": "FCx",
+        "roiMinor": "layer 3c"
+        }
+    }, {
+    "value": "FCx4",
+    "attributes": {
+        "roiMajor": "FCx",
+        "roiMinor": "layer 4"
+        }
+    }, {
+    "value": "FCx5",
+    "attributes": {
+        "roiMajor": "FCx",
+        "roiMinor": "layer 5"
+        }
+    }, {
+    "value": "FCx6",
+    "attributes": {
+        "roiMajor": "FCx",
+        "roiMinor": "layer 6"
+        }
+    }, {
+    "value": "TCx1",
+    "attributes": {
+        "roiMajor": "TCx",
+        "roiMinor": "layer 1"
+        }
+    }, {
+    "value": "TCx2",
+    "attributes": {
+        "roiMajor": "TCx",
+        "roiMinor": "layer 2"
+        }
+    }, {
+    "value": "TCx3",
+    "attributes": {
+        "roiMajor": "TCx",
+        "roiMinor": "layer 3"
+        }
+    }, {
+   "value": "TCx3a",
+    "attributes": {
+        "roiMajor": "TCx",
+        "roiMinor": "layer 3a"
+        }
+    }, {
+   "value": "TCx3b",
+    "attributes": {
+        "roiMajor": "TCx",
+        "roiMinor": "layer 3b"
+        }
+    }, {
+   "value": "TCx3c",
+    "attributes": {
+        "roiMajor": "TCx",
+        "roiMinor": "layer 3c"
+        }
+    }, {
+    "value": "TCx4",
+    "attributes": {
+        "roiMajor": "TCx",
+        "roiMinor": "layer 4"
+        }
+    }, {
+    "value": "TCx5",
+    "attributes": {
+        "roiMajor": "TCx",
+        "roiMinor": "layer 5"
+        }
+    }, {
+    "value": "TCx6",
+    "attributes": {
+        "roiMajor": "TCx",
+        "roiMinor": "layer 6"
+        }
+    }, {
+    "value": "TEa1",
+    "attributes": {
+        "roiMajor": "TEa",
+        "roiMinor": "layer 1"
+        }
+    }, {
+    "value": "TEa2/3",
+    "attributes": {
+        "roiMajor": "TEa",
+        "roiMinor": "layer 2/3"
+        }
+    }, {
+    "value": "TEa4",
+    "attributes": {
+        "roiMajor": "TEa",
+        "roiMinor": "layer 4"
+        }
+    }, {
+    "value": "TEa5",
+    "attributes": {
+        "roiMajor": "TEa",
+        "roiMinor": "layer 5"
+        }
+    }, {
+    "value": "TEa6a",
+    "attributes": {
+        "roiMajor": "TEa",
+        "roiMinor": "layer 6a"
+        }
+    }, {
+    "value": "TEa6b",
+    "attributes": {
+        "roiMajor": "TEa",
+        "roiMinor": "layer 6b"
+        }
+    }, {
+    "value": "dLGNMagnocellular",
+    "attributes": {
+        "roiMajor": "dLGN",
+        "roiMinor": "Magnocellular"
+        }
+    }, {
+    "value": "dLGNParvocellular",
+    "attributes": {
+        "roiMajor": "dLGN",
+        "roiMinor": "Parvocellular"
+        }
+    }, {
+    "value": "dLGNCore",
+    "attributes": {
+        "roiMajor": "dLGN",
+        "roiMinor": "Core"
+        }
+    }, {
+    "value": "dLGNShell",
+    "attributes": {
+        "roiMajor": "dLGN",
+        "roiMinor": "Shell"
+        }
     }
-}
+]
