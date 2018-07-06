@@ -68,13 +68,11 @@
                                 "rigOperator": {
                                     "type": "string",
                                     "title": "Researcher",
-                                    "enum":["nataliag", "rene", "djai", "christina", "ayoub", "aarono", "briank", "brianle", "dijonh", "gasparo", "huibm", "jonathant", "kristenh", "lindsayn", "lisak", "ramr", "rustym", "davidre"],
                                     "required":true
                                 },
                                 "rigNumber": {
                                     "type":"string",
                                     "title":"Rig #",
-                                    "enum":["1","2","3","4","5","6","7","8", "BRL", "HCT1", "HCT2", "HCT3"],
                                     "required":true
                                 },
                                 "date":{
@@ -93,12 +91,12 @@
                                     "required":true
                                 },
                                 "blankFillDate":{
-                                    "format":"date",
+                                    "format":"string",
                                     "title":"Blank Fill Date",
                                     "required":true
                                 },
                                 "internalFillDate":{
-                                    "format":"date",
+                                    "format":"string",
                                     "title":"Internal Fill Date",
                                     "required":true
                                 },
@@ -152,7 +150,6 @@
                                                         "type":"string",
                                                         "title":"Pilot Name",
                                                         "default": "None",
-                                                        "enum": ["None", "Tissue_Touch", "Electroporation", "Non_Human_Primate_LGN", "Nucleated Patch - Retraction Pressure"],
                                                         "required":true
                                                     },
                                                     "pilotTest01":{
@@ -199,7 +196,6 @@
                                             		"humanCellTypePrediction":{
                                                 		"type":"string",
                                                 		"title":"Cell Type Prediction (for Human Neurons)",
-                                                		"enum":["Unknown", "Pyramidal", "FS Interneuron", "Spindle Shaped", "Unknown Interneuron"],
                                                 		"required":false
                                             		}
                                                 }
@@ -299,7 +295,8 @@
                                                     "tubeID":{
                                                         "type":"string",
                                                         "title":"Patched Cell Container",
-                                                        "required":true
+                                                        "required":true,
+                                                        "pattern": "^(P[A-Z0-9]S4_([0-9]{2}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01]))_[0-9]{3}_A01)|(NA)$",
                                                     },
                                                     "extractionNotes": {
                                                         "type": "string",
@@ -366,6 +363,7 @@
                                 },
                                 "rigOperator" : {
                                 	"type": "select",
+                                    "dataSource":"./data/rigOperators.json",
                                     "fieldClass": "dropdown-content col-md-2",
                                     "helper": [],
                                     "hideNone":false,
@@ -410,6 +408,7 @@
                                 },
                                 "rigNumber": {
                                     "type": "select",
+                                    "dataSource":"./data/rigNumbers.json",
                                     "fieldClass":"dropdown-content col-md-1",
                                     "helper":[],
                                     "hideNone":false,
@@ -443,7 +442,7 @@
                                     "type":"date",
                                     "fieldClass": "col-md-3",
                                     "picker": {
-                                        "format":"YYYY-MM-DD HH:mm:ss Z",
+                                        "format":"YYYY-MM-DD HH:mm:ss Z", //"YYYY-MM-DDTHH:mm:ss"
                                         "stepping":1,
                                         "showTodayButton": true,
                                         "showClose":true,
@@ -542,34 +541,42 @@
                                     "hideInitValidationError":true
                                 },  
                                 "blankFillDate": {
-                                    "type":"date",
+                                    "type":"select",
+                                    "dataSource":"./data/blankFillDates.json",
                                     "fieldClass":"col-md-2",
-                                    "picker": {
-                                        "format":"YYYY-MM-DD",
-                                        "showClose":true,
-                                        "inline":false,
-                                        "tooltips": {
-                                            today: "Go to today"
-                                        },
-                                        "useCurrent":true
-                                    },
+                                    //"picker": {
+                                    //    "format":"YYYY-MM-DD",
+                                    //    "showClose":true,
+                                    //    "inline":false,
+                                    //    "tooltips": {
+                                    //        today: "Go to today"
+                                    //    },
+                                    //    "useCurrent":true,
+                                    //},
+                                    "hideNone":false,
+                                    "noneLabel":'',
+                                    "sort":function(a, b){return 0;},
                                     "manualEntry":false,
                                     "validate":true,
                                     "showMessages":false,
                                     "hideInitValidationError":true
                                 },
                                 "internalFillDate": {
-                                    "type":"date",
+                                    "type":"select",
+                                    "dataSource":"./data/internalFillDates.json",
                                     "fieldClass":"col-md-2",
-                                    "picker": {
-                                        "format":"YYYY-MM-DD",
-                                        "showClose":true,
-                                        "inline":false,
-                                        "tooltips": {
-                                            today: "Go to today"
-                                        },
-                                        "useCurrent":true
-                                    },
+                                    //"picker": {
+                                    //    "format":"YYYY-MM-DD",
+                                    //    "showClose":true,
+                                    //    "inline":false,
+                                    //    "tooltips": {
+                                    //        today: "Go to today"
+                                    //    },
+                                    //    "useCurrent":true
+                                    //},
+                                    "hideNone":false,
+                                    "noneLabel":'',
+                                    "sort":function(a, b){return 0;},
                                     "manualEntry":false,
                                     "validate":true,
                                     "showMessages":false,
@@ -702,6 +709,7 @@
                                             		},
                                                 	"pilotName": {
                                                         "type":"select",
+                                                        "dataSource":"./data/pilotName.json",
                                                         "fieldClass": "form-group col-md-5",
                                                         "helper": [],
                                                         "sort":false,
@@ -882,6 +890,7 @@
                                                     },
                                                     "humanCellTypePrediction":{
                                                 		"type": "select",
+                                                        "dataSource":"./data/humanCellTypes.json",
                                                 		"fieldClass": "dropdown-content col-md-4"
                                                 	}
                                                 }
@@ -1285,212 +1294,213 @@
                                                          }
                                                     },
                                                     "order":["roiMajor", "roiMinor"],
-                                                    "data": [{
-                                                         "value": "VISp1",
-                                                         "attributes": {
-                                                             "roiMajor": "VISp",
-                                                             "roiMinor": "layer 1"
-                                                             }
-                                                         }, {
-                                                         "value": "VISp2/3",
-                                                         "attributes": {
-                                                             "roiMajor": "VISp",
-                                                             "roiMinor": "layer 2/3"
-                                                             }
-                                                         }, {
-                                                         "value": "VISp4",
-                                                         "attributes": {
-                                                             "roiMajor": "VISp",
-                                                             "roiMinor": "layer 4"
-                                                             }
-                                                         }, {
-                                                         "value": "VISp5",
-                                                         "attributes": {
-                                                             "roiMajor": "VISp",
-                                                             "roiMinor": "layer 5"
-                                                             }
-                                                         }, {
-                                                         "value": "VISp6a",
-                                                         "attributes": {
-                                                             "roiMajor": "VISp",
-                                                             "roiMinor": "layer 6a"
-                                                             }
-                                                         }, {
-                                                         "value": "VISp6b",
-                                                         "attributes": {
-                                                             "roiMajor": "VISp",
-                                                             "roiMinor": "layer 6b"
-                                                             }
-                                                         }, {
-                                                         "value": "FCx1",
-                                                         "attributes": {
-                                                             "roiMajor": "FCx",
-                                                             "roiMinor": "layer 1"
-                                                             }
-                                                         }, {
-                                                         "value": "FCx2",
-                                                         "attributes": {
-                                                             "roiMajor": "FCx",
-                                                             "roiMinor": "layer 2"
-                                                             }
-                                                         }, {
-                                                         "value": "FCx3",
-                                                         "attributes": {
-                                                             "roiMajor": "FCx",
-                                                             "roiMinor": "layer 3"
-                                                             }
-                                                         }, {
-                                                         "value": "FCx3a",
-                                                         "attributes": {
-                                                             "roiMajor": "FCx",
-                                                             "roiMinor": "layer 3a"
-                                                             }
-                                                         }, {
-                                                         "value": "FCx3b",
-                                                         "attributes": {
-                                                             "roiMajor": "FCx",
-                                                             "roiMinor": "layer 3b"
-                                                             }
-                                                         }, {
-                                                         "value": "FCx3c",
-                                                         "attributes": {
-                                                             "roiMajor": "FCx",
-                                                             "roiMinor": "layer 3c"
-                                                             }
-                                                         }, {
-                                                         "value": "FCx4",
-                                                         "attributes": {
-                                                             "roiMajor": "FCx",
-                                                             "roiMinor": "layer 4"
-                                                             }
-                                                         }, {
-                                                         "value": "FCx5",
-                                                         "attributes": {
-                                                             "roiMajor": "FCx",
-                                                             "roiMinor": "layer 5"
-                                                             }
-                                                         }, {
-                                                         "value": "FCx6",
-                                                         "attributes": {
-                                                             "roiMajor": "FCx",
-                                                             "roiMinor": "layer 6"
-                                                             }
-                                                         }, {
-                                                         "value": "TCx1",
-                                                         "attributes": {
-                                                             "roiMajor": "TCx",
-                                                             "roiMinor": "layer 1"
-                                                             }
-                                                         }, {
-                                                         "value": "TCx2",
-                                                         "attributes": {
-                                                             "roiMajor": "TCx",
-                                                             "roiMinor": "layer 2"
-                                                             }
-                                                         }, {
-                                                         "value": "TCx3",
-                                                         "attributes": {
-                                                             "roiMajor": "TCx",
-                                                             "roiMinor": "layer 3"
-                                                             }
-                                                         }, {
-                                                        "value": "TCx3a",
-                                                         "attributes": {
-                                                             "roiMajor": "TCx",
-                                                             "roiMinor": "layer 3a"
-                                                             }
-                                                         }, {
-                                                        "value": "TCx3b",
-                                                         "attributes": {
-                                                             "roiMajor": "TCx",
-                                                             "roiMinor": "layer 3b"
-                                                             }
-                                                         }, {
-                                                        "value": "TCx3c",
-                                                         "attributes": {
-                                                             "roiMajor": "TCx",
-                                                             "roiMinor": "layer 3c"
-                                                             }
-                                                         }, {
-                                                         "value": "TCx4",
-                                                         "attributes": {
-                                                             "roiMajor": "TCx",
-                                                             "roiMinor": "layer 4"
-                                                             }
-                                                         }, {
-                                                         "value": "TCx5",
-                                                         "attributes": {
-                                                             "roiMajor": "TCx",
-                                                             "roiMinor": "layer 5"
-                                                             }
-                                                         }, {
-                                                         "value": "TCx6",
-                                                         "attributes": {
-                                                             "roiMajor": "TCx",
-                                                             "roiMinor": "layer 6"
-                                                             }
-                                                         }, {
-                                                         "value": "TEa1",
-                                                         "attributes": {
-                                                             "roiMajor": "TEa",
-                                                             "roiMinor": "layer 1"
-                                                             }
-                                                         }, {
-                                                         "value": "TEa2/3",
-                                                         "attributes": {
-                                                             "roiMajor": "TEa",
-                                                             "roiMinor": "layer 2/3"
-                                                             }
-                                                         }, {
-                                                         "value": "TEa4",
-                                                         "attributes": {
-                                                             "roiMajor": "TEa",
-                                                             "roiMinor": "layer 4"
-                                                             }
-                                                         }, {
-                                                         "value": "TEa5",
-                                                         "attributes": {
-                                                             "roiMajor": "TEa",
-                                                             "roiMinor": "layer 5"
-                                                             }
-                                                         }, {
-                                                         "value": "TEa6a",
-                                                         "attributes": {
-                                                             "roiMajor": "TEa",
-                                                             "roiMinor": "layer 6a"
-                                                             }
-                                                         }, {
-                                                         "value": "TEa6b",
-                                                         "attributes": {
-                                                             "roiMajor": "TEa",
-                                                             "roiMinor": "layer 6b"
-                                                             }
-                                                         }, {
-                                                         "value": "dLGNMagnocellular",
-                                                         "attributes": {
-                                                             "roiMajor": "dLGN",
-                                                             "roiMinor": "Magnocellular"
-                                                             }
-                                                         }, {
-                                                         "value": "dLGNParvocellular",
-                                                         "attributes": {
-                                                             "roiMajor": "dLGN",
-                                                             "roiMinor": "Parvocellular"
-                                                             }
-                                                         }, {
-                                                         "value": "dLGNCore",
-                                                         "attributes": {
-                                                             "roiMajor": "dLGN",
-                                                             "roiMinor": "Core"
-                                                             }
-                                                         }, {
-                                                         "value": "dLGNShell",
-                                                         "attributes": {
-                                                             "roiMajor": "dLGN",
-                                                             "roiMinor": "Shell"
-                                                             }
-                                                         }
-                                                     ],
+                                                    "data":"./data/test.json",
+                                                    // "data": [{
+                                                    //      "value": "VISp1",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "VISp",
+                                                    //          "roiMinor": "layer 1"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "VISp2/3",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "VISp",
+                                                    //          "roiMinor": "layer 2/3"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "VISp4",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "VISp",
+                                                    //          "roiMinor": "layer 4"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "VISp5",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "VISp",
+                                                    //          "roiMinor": "layer 5"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "VISp6a",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "VISp",
+                                                    //          "roiMinor": "layer 6a"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "VISp6b",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "VISp",
+                                                    //          "roiMinor": "layer 6b"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "FCx1",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "FCx",
+                                                    //          "roiMinor": "layer 1"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "FCx2",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "FCx",
+                                                    //          "roiMinor": "layer 2"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "FCx3",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "FCx",
+                                                    //          "roiMinor": "layer 3"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "FCx3a",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "FCx",
+                                                    //          "roiMinor": "layer 3a"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "FCx3b",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "FCx",
+                                                    //          "roiMinor": "layer 3b"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "FCx3c",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "FCx",
+                                                    //          "roiMinor": "layer 3c"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "FCx4",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "FCx",
+                                                    //          "roiMinor": "layer 4"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "FCx5",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "FCx",
+                                                    //          "roiMinor": "layer 5"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "FCx6",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "FCx",
+                                                    //          "roiMinor": "layer 6"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "TCx1",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TCx",
+                                                    //          "roiMinor": "layer 1"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "TCx2",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TCx",
+                                                    //          "roiMinor": "layer 2"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "TCx3",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TCx",
+                                                    //          "roiMinor": "layer 3"
+                                                    //          }
+                                                    //      }, {
+                                                    //     "value": "TCx3a",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TCx",
+                                                    //          "roiMinor": "layer 3a"
+                                                    //          }
+                                                    //      }, {
+                                                    //     "value": "TCx3b",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TCx",
+                                                    //          "roiMinor": "layer 3b"
+                                                    //          }
+                                                    //      }, {
+                                                    //     "value": "TCx3c",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TCx",
+                                                    //          "roiMinor": "layer 3c"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "TCx4",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TCx",
+                                                    //          "roiMinor": "layer 4"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "TCx5",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TCx",
+                                                    //          "roiMinor": "layer 5"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "TCx6",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TCx",
+                                                    //          "roiMinor": "layer 6"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "TEa1",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TEa",
+                                                    //          "roiMinor": "layer 1"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "TEa2/3",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TEa",
+                                                    //          "roiMinor": "layer 2/3"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "TEa4",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TEa",
+                                                    //          "roiMinor": "layer 4"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "TEa5",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TEa",
+                                                    //          "roiMinor": "layer 5"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "TEa6a",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TEa",
+                                                    //          "roiMinor": "layer 6a"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "TEa6b",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "TEa",
+                                                    //          "roiMinor": "layer 6b"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "dLGNMagnocellular",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "dLGN",
+                                                    //          "roiMinor": "Magnocellular"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "dLGNParvocellular",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "dLGN",
+                                                    //          "roiMinor": "Parvocellular"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "dLGNCore",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "dLGN",
+                                                    //          "roiMinor": "Core"
+                                                    //          }
+                                                    //      }, {
+                                                    //      "value": "dLGNShell",
+                                                    //      "attributes": {
+                                                    //          "roiMajor": "dLGN",
+                                                    //          "roiMinor": "Shell"
+                                                    //          }
+                                                    //      }
+                                                    //  ],
                                                      "horizontal":true
                                                 }
                                             }
@@ -1526,6 +1536,11 @@
                         },
                         "data": {
                         	"formVersion": "2.0.3"
+                        //},
+                        //"view": {
+                        //    "templates": {
+                        //        "message": "<div style='text-align:center'><h3 style='color: red;'>Yippee kai yay!</h3><img src='/images/john-mcclaine.jpg'><p style='color: red;'>{{{message}}}</p></div>"
+                        //    }
                         }
                     });
                 });
