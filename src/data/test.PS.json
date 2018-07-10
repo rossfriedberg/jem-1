@@ -1,0 +1,101 @@
+{
+  "formVersion": "2.0.3",
+  "rigOperator": "lindsayn",
+  "rigNumber": "6",
+  "date": "2018-07-06 14:45:53 -07:00",
+  "limsSpecName": "Gad2-IRES-Cre;Ai14-399698.05.02",
+  "acsfProductionDate": "2018-07-05",
+  "blankFillDate": "2018-06-14",
+  "internalFillDate": "2018-05-21",
+  "flipped": "Yes",
+  "sliceQuality": "Good",
+  "pipettes": [
+    {
+      "approach": {
+        "sliceHealth": "3",
+        "cellHealth": "3",
+        "creCell": "Cre+",
+        "pilotName": "None"
+      },
+      "recording": {
+        "timeStart": "14:52:15 -07:00",
+        "pipetteR": 4.9,
+        "timeWholeCellStart": "14:53:31 -07:00"
+      },
+      "status": "SUCCESS",
+      "extraction": {
+        "pressureApplied": -40,
+        "retractionPressureApplied": -40,
+        "timeExtractionStart": "15:00:58 -07:00",
+        "timeExtractionEnd": "15:02:33 -07:00",
+        "timeRetractionEnd": "15:05:32 -07:00",
+        "postPatch": "nucleus_present",
+        "endPipetteR": 3000,
+        "nucleus": "no",
+        "tubeID": "P8S4_180706_357_A01",
+        "sampleObservations": "No Bubbles"
+      },
+      "depth": 53,
+      "autoRoi": "None",
+      "manualRoi": "VISp5"
+    },
+    {
+      "approach": {
+        "sliceHealth": "3",
+        "cellHealth": "3",
+        "creCell": "Cre+",
+        "pilotName": "None"
+      },
+      "recording": {
+        "timeStart": "15:16:46 -07:00",
+        "pipetteR": 4.9,
+        "timeWholeCellStart": "15:17:52 -07:00"
+      },
+      "status": "SUCCESS",
+      "extraction": {
+        "pressureApplied": -40,
+        "retractionPressureApplied": -40,
+        "timeExtractionStart": "15:27:25 -07:00",
+        "timeExtractionEnd": "15:30:21 -07:00",
+        "timeRetractionEnd": "15:33:10 -07:00",
+        "postPatch": "nucleus_present",
+        "endPipetteR": 3000,
+        "nucleus": "no",
+        "tubeID": "P8S4_180706_358_A01",
+        "sampleObservations": "No Bubbles"
+      },
+      "depth": 33,
+      "autoRoi": "None",
+      "manualRoi": "VISp6a"
+    },
+    {
+      "approach": {
+        "sliceHealth": "3",
+        "cellHealth": "4",
+        "creCell": "Cre+",
+        "pilotName": "None"
+      },
+      "recording": {
+        "timeStart": "15:42:46 -07:00",
+        "pipetteR": 4.8,
+        "timeWholeCellStart": "15:43:40 -07:00"
+      },
+      "status": "SUCCESS",
+      "extraction": {
+        "pressureApplied": -40,
+        "retractionPressureApplied": -40,
+        "timeExtractionStart": "15:52:15 -07:00",
+        "timeExtractionEnd": "15:54:44 -07:00",
+        "timeRetractionEnd": "15:57:01 -07:00",
+        "postPatch": "nucleus_present",
+        "endPipetteR": 3000,
+        "nucleus": "no",
+        "tubeID": "P8S4_180706_359_A01",
+        "sampleObservations": "No Bubbles"
+      },
+      "depth": 36,
+      "autoRoi": "None",
+      "manualRoi": "VISp5"
+    }
+  ]
+}
