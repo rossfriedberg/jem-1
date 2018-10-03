@@ -69,7 +69,52 @@
             "items":{
                 "title":"Patch-Seq Pipette",
                 "type":"object",
-                "properties":{                    
+                "properties":{
+					"approach": {
+                        "type":"object",
+                        "title": "Approach Info",
+                        "properties": {
+                            "sliceHealth":{
+                                "type":"string",
+                                "title": "Slice Health",
+                                "enum":["1","2","3","4","5"],
+                                "required":true
+                            },
+                            "cellHealth":{
+                                "type":"string",
+                                "title": "Cell Health",
+                                "enum":["1","2","3","4","5"],
+                                "required":true
+                            },
+                            "creCell": {
+                                "type":"string",
+                                "title":"Cre Status",
+                                "enum":["Cre+","Cre-","None"],
+                                "required":true
+                            },
+                            "pilotName":{
+                                "type":"string",
+                                "title":"Pilot Name",
+                                "default": "None",
+                                "enum": ["None", "Tissue_Touch", "Electroporation", "Non_Human_Primate_LGN", "Nucleated Patch - Retraction Pressure"],
+                                "required":true
+                            },
+                            "pilotTest01":{
+                                "type":"string",
+                                "title":"Pilot Details",
+                                "enum":["Standard (~80 mbar)", "Mid-Range (~65 mbar)", "Low (~50 mbar)", "Minimal (~25 mbar)"],
+                                "default":"",
+                                "dependencies":"pilotName",
+                                "required":false
+                            },
+                             "pilotTest04":{
+                               "type":"string",
+                                "title":"Pilot Details",
+                                "dependencies":"pilotName",
+                                "required":false
+                            }
+                        }
+                    },
                     "manualRoi":{
                         "type":"string",
                         "title": "ROI (Manual Entry)",
