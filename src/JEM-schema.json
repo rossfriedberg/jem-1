@@ -6,6 +6,12 @@
             "type":"string",
             "title":"Version",
             "readonly":true
+        },
+        "rigOperator": {
+            "type": "string",
+            "title": "Researcher",
+            "enum":["nataliag", "rene", "djai", "christina", "ayoub", "aarono", "briank", "brianle", "dijonh", "gasparo", "huibm", "jonathant", "jessicat", "katherineb", "kristenh", "lindsayn", "lisak", "martonr", "norbertm", "ramr", "rustym", "szabinaf"],
+            "required":true
         }
     }
 }
